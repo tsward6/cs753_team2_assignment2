@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import edu.unh.cs.treccar_v2.Data;
 import java.io.PrintWriter;
 
-FRUMPY BONERS
 
 public class LuceneSearcher {
     public final IndexSearcher searcher;
