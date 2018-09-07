@@ -12,4 +12,4 @@ java -jar target/team2_1-1.0-SNAPSHOT-jar-with-dependencies.jar
 
 (java command needs no args because the tasks are specified and don't require user input)
 
-
+I am confused by what is being asked for the $methodname parameter in each runfile line. (just put question mark for now)
