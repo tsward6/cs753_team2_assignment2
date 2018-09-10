@@ -84,26 +84,26 @@ public class LuceneSearcher {
      * @param cborLoc: The path where the page cbor file exists.
      */
     public void makeRunFile(String cborLoc) throws IOException {
-		final int topN = 100; // get the top 100 results
-		String outFileName = "run_files/" + methodName + "-runfile.txt";
-		PrintWriter writer = new PrintWriter(outFileName, "UTF-8");
-		// iterate through each page
+	final int topN = 100; // get the top 100 results
+	String outFileName = "run_files/" + methodName + "-runfile.txt";
+	PrintWriter writer = new PrintWriter(outFileName, "UTF-8");
+	// iterate through each page
         for (Data.Page p : SearchUtils.createPageIterator(cborLoc)) {
-			String queryId = p.getPageId();
-			String keywordQuery = p.getPageName();
-			TopDocs topDocs = query(keywordQuery, topN);
-			int rank = topDocs.scoreDocs.length;
-			// iterate through n (<= 100) top docs and output to run file  
-			for (ScoreDoc sd : topDocs.scoreDocs) { 
-				Document doc = searcher.doc(sd.doc);
-				String paraId = doc.get("id");
-				String score = Float.toString(sd.score);
-				String out = queryId + " Q0 " + paraId + " " + rank--
+		String queryId = p.getPageId();
+		String keywordQuery = p.getPageName();
+		TopDocs topDocs = query(keywordQuery, topN);
+		int rank = topDocs.scoreDocs.length;
+		// iterate through n (<= 100) top docs and output to run file  
+		for (ScoreDoc sd : topDocs.scoreDocs) { 
+			Document doc = searcher.doc(sd.doc);
+			String paraId = doc.get("id");
+			String score = Float.toString(sd.score);
+			String out = queryId + " Q0 " + paraId + " " + rank--
 				             + " " + score + " group2-" + methodName;		 
-				writer.println(out);
-			}
+			writer.println(out);
+		}
         }
-		writer.close();
+	writer.close();
     }
        
 }
