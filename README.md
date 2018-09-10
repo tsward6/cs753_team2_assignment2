@@ -2,14 +2,15 @@
 Programming Assignment2
 
 
-This currently runs Part 1 of programming assignment 2.
+This currently runs Part 1 and 2 of programming assignment 2.
 
-To run, enter the following two commands:
+I am a tad unclear as to what is required for step 2, but the framework seems logical.
 
-1) bash compile.sh
+Parts 1 and 2 require no user input, so a bash script is provided that does all of the work. 
 
-2) java -jar target/team2_1-1.0-SNAPSHOT-jar-with-dependencies.jar 
+1) maven compile command
+2) run the jar file maven created
+3) run the python script that uses pytrec_eval to get results for part 2
 
-(java command needs no args because the tasks are specified and don't require user input)
-
-I am confused by what is being asked for the $methodname parameter in each runfile line. (just put question mark for now)
+in a linux terminal, cd to wherever the folder was extracted and enter the following command:
+  bash part2.sh
