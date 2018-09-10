@@ -13,7 +13,7 @@ in a linux terminal, cd to wherever the folder was extracted and enter the follo
   
 This script runs the following commands:
   1) maven compile command
-  2) run the jar file maven created
-  3) run the python script that uses pytrec_eval to get results for part 2
+  2) run the jar file maven created (team2_1-1.0-SNAPSHOT-jar-with-dependencies.jar)
+  3) run the python script that uses pytrec_eval to get results for part 2 (part2.py) 
 
 
